@@ -87,10 +87,10 @@ class openinviter
 	private function statsCheck()
 		{
 		if (!$this->settings['stats']) return true;
-		$db_file=$this->basePath.'/openinviter_stats.sqlite';
+		$db_file=$this->basePath.'/intern/openinviter_stats.sqlite';
 		if (!file_exists($db_file))
 			{
-			if (!is_writable($this->basePath)) { $this->internalError="Unable to write stats. ".$this->basePath." is not writable";return false; }
+			if (!is_writable($this->basePath.'/intern/')) { $this->internalError="Unable to write stats. ".$this->basePath." is not writable";return false; }
 			if (!$this->statsOpenDB()) { $this->internalError="Unable to create the stats database.";return false; }
 			$this->statsQuery("CREATE TABLE oi_imports (id INTEGER PRIMARY KEY, service VARCHAR(16), contacts INTEGER, insert_dt DATETIME, insert_ip VARCHAR(15))");
 			$this->statsQuery("CREATE TABLE oi_messages (id INTEGER PRIMARY KEY, service VARCHAR(16), type CHAR(1), messages INTEGER, insert_dt DATETIME, insert_ip VARCHAR(15))");
@@ -105,7 +105,7 @@ class openinviter
 		{
 		if (!$this->settings['stats']) return true;
 		if (function_exists('sqlite_open')) 
-			if ($this->statsDB=sqlite_open($this->basePath.'/openinviter_stats.sqlite',0666)) return true;
+			if ($this->statsDB=sqlite_open($this->basePath.'/intern/openinviter_stats.sqlite',0666)) return true;
 		return false;
 		}
 	
