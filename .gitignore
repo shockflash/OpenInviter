@@ -1,1 +1,4 @@
 config.php.example
+intern/openinviter_stats.sqlite
+.project
+postinstall_results.res
