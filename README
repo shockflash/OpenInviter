@@ -1,0 +1,28 @@
+OpenInviter 1.9.4
+-----------------
+This is a copy of the OpenInviter project.
+Original source code can be found at: http://http://openinviter.com/download.php
+
+This "fork" is made to be an alternative to the hosted OpenInviter, with some additions.
+It will contain a webservice to be used like the hosted Version, but without trusting&using an external company/webservice
+
+Installation
+------------
+Please read "install.txt" for installation introduction.
+Important: Copy the config.php.example to config.php
+
+Please also read the LICENSE.txt
+
+Differences
+-----------
+This "fork" contains additional file to host your own OpenInviter better.
+
+README: this file
+config.php.example: renamed config.php, allows to ignore the individual config.php in git, but keeping an example file
+
+TODO
+----
+Some file will be added in the future:
+
+services.php: Webservice to access your local OpenInviter remote. Planed to used together with DjangoOpenInviter
+test.php & config.test.php: Run test against the sources to see if the OpenInviter plugin still works
